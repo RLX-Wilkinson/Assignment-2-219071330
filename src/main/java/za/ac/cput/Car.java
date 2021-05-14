@@ -2,28 +2,36 @@ package za.ac.cput;
 
 public class Car {
 
-    private String name, color;
-    private int id,carPrice;
+    private String carName, carColor;
 
-    public String getName() {
-        return name;
+    public Car() {
+
     }
 
-    public String getColor() {
-        return color;
+    public Car(String carName, String carColor) {
+        this.carName = carName;
+        this.carColor = carColor;
     }
 
-    public int getId() {
-        return id;
+    public String getcarName() {
+        return carName;
     }
 
-    public int getCarPrice() {
-        return carPrice;
+    public String getcarColor() {
+        return carColor;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setcarName(String carName) {
+        this.carName = carName;
     }
 
+    public void setcarColor(String carColor) {
+        this.carColor = carColor;
+    }
 
+    @Override
+    public String toString() {
+        return    String.format("%10s\t%10s\t", carName, carColor);
+
+    }
 }
