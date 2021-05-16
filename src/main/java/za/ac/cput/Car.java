@@ -1,11 +1,7 @@
 package za.ac.cput;
 /*
 Author: Tauriq-Allie Wilkinson(219071330)
-<<<<<<<<< Temporary merge branch 1
-FileName: CarTest.java
-=========
 FileName: Car.java
->>>>>>>>> Temporary merge branch 2
 DueDate: 16 May 2021
  */
 
