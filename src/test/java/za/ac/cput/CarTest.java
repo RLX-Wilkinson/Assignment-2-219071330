@@ -28,8 +28,7 @@ class CarTest {
     void collectTest(){
 
         Collection<Car> collectCar = new LinkedList<>();
-
-        //Add
+        //Adding
         /*
             Adding the elements directly into the collection interface
          */
@@ -42,10 +41,10 @@ class CarTest {
             System.out.printf("%s\n",c1);
         }
 
-        //Testcase for Add
         assertEquals(3, collectCar.size());
 
-        //Remove
+
+        //Removing
         /*
             Removing an element from the collection interface
         */
@@ -56,28 +55,28 @@ class CarTest {
             System.out.printf("%s\n",c1);
         }
 
-        //Testcase for Remove
         assertEquals(2, collectCar.size());
 
-        //Find
+        //Finding
         /*
             Finding out if the collection interface contains the element
          */
-        System.out.println("\n" + "Was it Found?"+ "\n"+collectCar.contains(ferrari));
+        if (collectCar.contains(honda)) {
 
-        //Testcase for Find
+            System.out.println("\n" + " Car was Found");
+        } else {
+            System.out.println("Car was not Not Found");
+
+        }
         assertEquals(true,collectCar.contains(honda));
     }
-
-
-
 
     @Test
     void listTest() {
 
         List<Car> carList = new ArrayList<Car>();
 
-        //Add
+        //Adding
         /*
             Duplicate Ferrari added to show Removal
         */
@@ -92,14 +91,15 @@ class CarTest {
         carList.add(porche);
         carList.add(maserati);
 
-        System.out.println("ArrayList After Added");
+        System.out.println("Array After Added");
         for (Car c : carList) {
             System.out.printf("%s\n",c);
         }
-        //Testcase for Add
+
         assertEquals(9, carList.size());
 
-        //Remove
+
+        //Removing
         /*
             Removing the duplicate element from the list
         */
@@ -110,31 +110,31 @@ class CarTest {
             System.out.printf("%s\n",c);
         }
 
-        //Testcase for Remove
         assertEquals(8, carList.size());
 
-        //Find
+        //Finding
         /*
             Searches if the element if in the list
          */
-        System.out.println("\n" + "Was it Found?"+ "\n"+carList.contains(ferrari));
+        if (carList.contains(ferrari)) {
 
+            System.out.println("\n" + " Car was Found");
+        } else {
+            System.out.println("Car was not Not Found");
+
+        }
         assertEquals(true,carList.contains(ferrari));
     }
-
-
-
-
 
     @Test
     void setTest(){
      Set<Car> carSet = new HashSet<>();
 
-        //Add
-        /*
-           Duplicate Ferrari and Toyota added to show that even with 10 entries
-           there are only 8 sets of cars.
-        */
+     //Adding
+     /*
+       Duplicate Ferrari and Toyota added to show that even with 10 entries
+       there are only 8 sets of cars.
+     */
 
         carSet.add(mercedes);
         carSet.add(ferrari);
@@ -147,90 +147,40 @@ class CarTest {
         carSet.add(toyota);
         carSet.add(porche);
 
-        System.out.println("Sets After Added");
+        System.out.println("Array After Added");
         for (Car c1 : carSet) {
             System.out.printf("%s\n",c1);
         }
-
-        //Testcase for add
         assertEquals(8, carSet.size());
 
 
-        //Remove
-        /*
-           Removing one of the duplicate elements to show that the
-           set count will not change
-        */
+     //Removing
+     /*
+        Removing one of the duplicate elements to show that the
+        set count will not change
+     */
         carSet.remove(2);
 
-        System.out.println("\n"+"Sets After Removal");
+        System.out.println("\n"+"ArrayList After Removal");
         for (Car c : carSet) {
             System.out.printf("%s\n",c);
         }
-
-        //Testcase for Remove
         assertEquals(8, carSet.size());
 
-        //Find
+        //Finding
         /*
           Searches if the set is in the set interface
         */
 
-        System.out.println("\n" +"Was it found?"+ "\n"+carSet.contains(alfa));
+        if (carSet.contains(alfa)) {
 
-        //Testcase for Find
+            System.out.println("\n" + " Collection contains set");
+        } else {
+            System.out.println("Collection contains set");
+
+        }
         assertEquals(true,carSet.contains(alfa));
     }
 
-
-
-    @Test
-    void mapTest(){
-        Map<Car, Integer> carMap = new HashMap<>();
-
-        //Add
-        /*
-            Adding Car and Integer as the number of that particular element
-        */
-
-        carMap.put(ferrari,22);
-        carMap.put(alfa,15);
-        carMap.put(toyota,100);
-        carMap.put(lamborghini,30);
-        carMap.put(porche,45);
-        carMap.put(mercedes,89);
-        carMap.put(bmw,90);
-        carMap.put(maserati,60);
-
-        System.out.println("\n"+"Map After Adding");
-        for (Map.Entry<Car, Integer> me : carMap.entrySet()) {
-            System.out.print(me.getKey() + ":");
-            System.out.println(me.getValue());
-        }
-
-        //Testcase for Add
-        assertEquals(8,carMap.size());
-
-        //Remove
-        /*
-            Removing Map entry which includes the key and value. If the key is removed so is the value
-        */
-        carMap.remove(bmw);
-
-        System.out.println("\n"+"Map After Removing");
-        for (Map.Entry<Car, Integer> me : carMap.entrySet()) {
-            System.out.print(me.getKey() + ":");
-            System.out.println(me.getValue());
-        }
-
-        //Testcase for Remove
-        assertEquals(7,carMap.size());
-
-        //Find
-        System.out.println("\n"+ "Is Value Found?" + "\n" + carMap.containsValue(89));
-
-        //Testcase for Find
-        assertEquals(true,carMap.containsValue(89));
-    }
 
 }
