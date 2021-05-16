@@ -4,7 +4,6 @@ Author: Tauriq-Allie Wilkinson(219071330)
 FileName: Car.java
 DueDate: 16 May 2021
  */
-
 public class Car {
 
     private String carName, carColor;
